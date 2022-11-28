@@ -32,7 +32,7 @@ export function printListings(lists) {
 
     console.log(list);
     newPost += ` <div class="card m-1 col-lg-3 shadow-lg">
-      <a href="aproduct.html">
+    <a href="/alist.html?id=${list.id}">
         <div class="card-img col-12">
           <img class="" src="${list.media}" alt="" srcset="" width="100%" />
         </div>
