@@ -1,0 +1,1 @@
+const e=document.getElementById("credits"),t=document.getElementById("whoIsLoggedIn"),n=localStorage.getItem("credits"),l=localStorage.getItem("username");function o(){n===null||l===null?(e.innerHTML="Please login to see your credits",t.innerHTML="Hello Guest!"):window.addEventListener("load",()=>{e.innerHTML="Available Credits: "+n,t.innerHTML="Hello "+l+"!"})}o();

@@ -35,19 +35,16 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-    <title>iBuy</title>
+    <title>Register-iBuy</title>
   </head>
 
   <body>
     <div
       class="container-fluid d-flex p-2 justify-content-lg-end bg-secondary align-content-center"
     >
-      <div class="row-fluid mx-2">
-        <a href="profile.html">My iBuy</a>
-      </div>
-      <div class="row-fluid">
-        <a href="login.html">Login</a>
-      </div>
+      <div class="row-fluid mx-2" id="myIBuy"></div>
+      <div class="row-fluid" id="login"></div>
+      <div class="row-fluid" id="logout"></div>
     </div>
 
     <div class="container-fluid">
@@ -110,7 +107,7 @@
       </div>
 
       <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 m-2 p-lg-5">
-        <form class="form-control border-0 p-lg-4 bg-light" action="">
+        <form class="form-control border-0 p-lg-4 bg-light" id="registration">
           <div class="form-group">
             <div class="" id="userMessage"></div>
             <input
@@ -123,7 +120,7 @@
             />
           </div>
           <div class="validate-feedback text-danger" id="name-error"></div>
-          <div class="form-group">
+          <div class="form-grm-c">
             <input
               type="email"
               class="form-control mt-3 p-3"
@@ -156,7 +153,7 @@
               class="form-control mt-4 p-3"
               id="confirm-password"
               data-validation="required"
-              placeholder="confirm-password"
+              placeholder="Confirm-password"
             />
 
             <div
@@ -166,13 +163,14 @@
           </div>
           <div class="form-group">
             <input
-              type="file"
+              type="text"
               class="form-control mt-4 p-3"
               id="avatar"
               aria-describedby="avatar"
-              placeholder="Avatar"
+              placeholder="Optional:Avatar Url"
             />
           </div>
+          <div class="validate-feedback text-danger" id="avatar-error"></div>
 
           <div class="terms">
             <label class="form-check-label" for="flexCheckDefault">
@@ -181,8 +179,8 @@
           </div>
         </form>
         <div class="card border-0 mb-2">
-          <button type="button" class="btn btn-success p-3" id="signup">
-            Sign Up
+          <button type="button" class="btn btn-success p-3" id="register">
+            Register
           </button>
         </div>
         <div>
@@ -262,5 +260,6 @@
     </footer>
     <!-- Footer ends -->
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/register.js"></script>
   </body>
 </html>

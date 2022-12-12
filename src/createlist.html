@@ -35,19 +35,16 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-    <title>iBuy</title>
+    <title>Create List-iBuy</title>
   </head>
 
   <body>
     <div
       class="container-fluid d-flex p-2 justify-content-lg-end bg-secondary align-content-center"
     >
-      <div class="row-fluid mx-2">
-        <a href="profile.html">My iBuy</a>
-      </div>
-      <div class="row-fluid">
-        <a href="login.html">Login</a>
-      </div>
+      <div class="row-fluid mx-2" id="myIBuy"></div>
+      <div class="row-fluid" id="login"></div>
+      <div class="row-fluid" id="logout"></div>
     </div>
 
     <div class="container-fluid">
@@ -94,9 +91,11 @@
 
     <div class="container-fluid bg-light p-2 d-flex justify-content-end"></div>
     <!--end of navbar-->
-    <div class="container card d-flex p-5 border-0 col-6">
+    <div
+      class="container card d-flex p-5 border-0 col-lg-6 col-md-12 c3l-sm-12"
+    >
       <h2>List your item</h2>
-      <form class="form-control border-0 p-lg-6" action="">
+      <form class="form-control border-0 p-lg-6" id="post-form">
         <div class="form-group">
           <div class="" id="userMessage"></div>
           <input
@@ -109,17 +108,18 @@
           />
         </div>
         <div class="validate-feedback text-danger" id="title-error"></div>
-        <div class="validate-feedback text-danger" id="name-error"></div>
 
         <div class="form-group">
-          <input
-            type="text"
-            class="form-control mb-3 mt-3 p-3"
-            id="description"
-            data-validation=""
-            aria-describedby="description"
-            placeholder="Description"
-          />
+          <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <textarea
+              class="form-control"
+              name="description"
+              id="description"
+              rows="3"
+              placeholder="Post description"
+            ></textarea>
+          </div>
           <small id="emailHelp" class="form-text text-muted"> </small>
         </div>
         <div class="validate-feedback text-danger" id="description-error"></div>
@@ -136,22 +136,22 @@
           />
           <small id="tags" class="form-text text-muted"> </small>
         </div>
-        <div class="validate-feedback text-danger" id="email-error"></div>
+        <div class="validate-feedback text-danger" id="tags-error"></div>
 
         <div class="form-group">
           <input
             type="text"
             class="form-control mb-3 mt-3 p-3"
-            id="avatar"
+            id="media"
             aria-describedby="avatar"
-            placeholder="Avatar Url"
+            placeholder="Image Url"
           />
         </div>
-        <div class="validate-feedback text-danger" id="email-error"></div>
+        <div class="validate-feedback text-danger" id="media-error"></div>
 
         <div class="form-group">
           <input
-            type="date"
+            type="datetime-local"
             class="form-control mb-3 mt-3 p-3"
             id="end-time"
             aria-describedby="end-time"
@@ -159,9 +159,9 @@
             required="date"
           />
         </div>
-        <div class="validate-feedback text-danger" id="email-error"></div>
+        <div class="validate-feedback text-danger" id="end-time-error"></div>
       </form>
-      <button type="submit" class="btn btn-success p-3">Submit</button>
+      <input type="button" class="btn btn-success p-3" id="post" value="Post" />
     </div>
 
     <!-- end of main  -->
@@ -213,9 +213,12 @@
                 </div>
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-outline-light mb-4">
-                  Subscribe
-                </button>
+                <input
+                  type="button"
+                  class="btn btn-outline-light mb-4"
+                  id="signup"
+                  value="signup"
+                />
               </div>
             </div>
           </form>
@@ -236,5 +239,6 @@
     </footer>
     <!-- Footer ends -->
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/createList.js"></script>
   </body>
 </html>

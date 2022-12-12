@@ -105,3 +105,6 @@ typings/
 
 # Local Netlify folder
 .netlify
+
+#cache
+*.[Cc]ache

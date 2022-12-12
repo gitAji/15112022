@@ -45,3 +45,5 @@ Figma
 GitHub Projects
 
 ## How to setup and run the project locally
+npm i
+npm start 
