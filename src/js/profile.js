@@ -1,4 +1,4 @@
-import { getListings } from "./Listings";
+import { getListings } from "./listings.mjs";
 const accessToken = localStorage.getItem("accessToken");
 const userName = localStorage.getItem("username");
 
