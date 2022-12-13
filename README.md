@@ -36,7 +36,8 @@ The Product Owner has requested links to the following:<br>
 Bootstrap
 
 ## Hosting service used
-Netlify 
+Development
+Netlify [![Netlify Status](https://api.netlify.com/api/v1/badges/51df9a14-8462-4182-8908-b7456bbe618b/deploy-status)](https://app.netlify.com/sites/i-buy/deploys)
 
 ## Design application used
 Figma
