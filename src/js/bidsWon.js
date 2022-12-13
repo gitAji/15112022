@@ -34,6 +34,7 @@ export async function profile(url) {
 }
 profile(profileUrl);
 // getting the result in the console log
+/*
 function listOfBidsWon(profile){
    for(let win of profile.wins){
 console.log(win);
@@ -54,3 +55,4 @@ console.log(win);
 }
 
 listOfBidsWon();
+*/

@@ -141,5 +141,5 @@ export function createPost() {
         });
     }
    
-    createPost();
 
+createPost();
