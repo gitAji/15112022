@@ -12,10 +12,12 @@ const login = document.getElementById("login");
 const logout = document.getElementById("logout");
 const myProfile = document.getElementById("myIBuy");
 let collections = [];
+const loginBtn=`<a href="login.html">Logout</a>`;
+const myProfileBtn=` <a href="profile.html">My iBuy</a>`;
 
 if (localStorage.getItem("accessToken")) {
-  logout.innerHTML = `<a href="login.html">Logout</a>`;
-  myProfile.innerHTML = ` <a href="profile.html">My iBuy</a>`;
+  logout.innerHTML = loginBtn ;
+  myProfile.innerHTML = myProfileBtn;
 } else {
   login.innerHTML = `<a href="login.html">Login</a>`;
 }

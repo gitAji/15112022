@@ -5,7 +5,7 @@ const loginUrl = `${API_BASE_URL}${loginEndPoint}`;
 const login = document.getElementById("loginBtn");
 const name = document.getElementById("userName");
 
-export function userLogin(){
+export function loginForm(){
 
 login.addEventListener("click", (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ login.addEventListener("click", (e) => {
     const loginData = {
         email,
         password,
-    };
+    }
     console.log(loginData);
 
     async function loginUser(url, data) {
@@ -93,5 +93,7 @@ else if (!accessToken) {
 }
 }
 checkLogin();
+
+
 }
-userLogin();
+loginForm();
