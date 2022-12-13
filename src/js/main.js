@@ -9,9 +9,11 @@ import Alert from "bootstrap/js/dist/alert";
 import { Tooltip, Toast, Popover } from "bootstrap";
 import { getListings } from "./listings.js";
 import { listAPost } from "./aList";
+import { userLogin } from "./login";
 import{logoutUser} from "./logout.js";
 import { getProfile,profileData } from "./profile.js";
-
+import { createPost } from "./createList";
+import { userRegistration } from "./register";
 import { updateAvatar } from "./profile";
 
 

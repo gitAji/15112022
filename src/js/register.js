@@ -17,7 +17,7 @@ const confirmPasswordError = document.getElementById("confirm-password-error");
 const avatarError = document.getElementById("avatar-error");
 
 
- function userRegistration() {
+ export function userRegistration() {
     register.addEventListener("click", async (e) => {
         e.preventDefault();
         const nameValue = name.value.trim();
