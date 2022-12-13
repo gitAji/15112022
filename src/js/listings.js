@@ -93,7 +93,7 @@ export function printListings(lists) {
   allLists.innerHTML = newPost;
 }
 
-/*
+
 // search is working but has some conflict with
 const searchInput = document.getElementById("searchText");
 const endSoon= document.getElementById("ends-soon");
@@ -144,4 +144,3 @@ function filterPosts() {
     allLists.innerHTML = `<div=class="text-primary"> No result found for "${filterQuery}" </div><div class="text-warning">Use back key to clear!</div>`;
   }
 }
-*/
