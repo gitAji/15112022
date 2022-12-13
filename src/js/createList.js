@@ -19,7 +19,7 @@ const userMessage = document.getElementById('userMessage');
 const post = document.getElementById('post');
 const accessToken = localStorage.getItem('accessToken');
 
-function createPost() {
+export function createPost() {
     post.addEventListener('click', async (e) => {
             e.preventDefault();
             console.log('form is submitted!');
@@ -68,10 +68,6 @@ function createPost() {
                 }
         validation = true;
                 
-                
-                    
-                
-
             const titleValue = title.value.trim();
             const descriptionValue = description.value.trim();
             const tagsValue = tags.value.trim().split(',');
