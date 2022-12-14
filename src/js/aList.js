@@ -1,6 +1,4 @@
-import {
-  Button
-} from "bootstrap";
+
 const params = new URLSearchParams(document.location.search);
 const id = params.get("id");
 const accessToken = localStorage.getItem("accessToken");
@@ -235,8 +233,16 @@ if(seller == userName && statusUpdate === "Active"){
 
     </div>`;
 }
+if(!userName && !accessToken){
+  //alert("can not bid on own listing");
+  bidButtonSection.innerHTML = `
+    <div class="d-flex justify-content-center col-6 m-auto gap-2">
+    <a href="login.html"><button class="btn btn-outline-primary btn-lg" id="edit">Login To Bid</button></a>
+
+    </div>`;
+}
   const postImage = list.media != "" ? `${list.media}` : "https://via.placeholder.com/150";
-  const description = list.description != null ? `${list.description}` : "No description available";
+  const description = list.description != "" ? `${list.description}` : " No description available:";
   let newDiv = `
   <div class="card d-flex m-1 col-lg-5 col-12 border-0">
     <div class="card-img-top" style:max-height="20px">

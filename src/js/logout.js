@@ -7,9 +7,7 @@ export function logoutUser() {
         e.preventDefault();
         console.log("logout clicked");
     
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("username");
-        localStorage.removeItem("credits");
+       
     
     });
 }

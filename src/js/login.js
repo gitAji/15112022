@@ -81,7 +81,10 @@ login.addEventListener("click", (e) => {
     }
     loginUser(loginUrl, loginData);
 });
+}
+loginForm();
 
+/*
 const userStatus= document.getElementById("status");
 
 function checkLogin() {
@@ -89,11 +92,9 @@ function checkLogin() {
     if (accessToken) {
 userStatus.innerHTML = "You are logged in";   }
 else if (!accessToken) {
-    userStatus.innerHTML = "You are logged out";
+    userStatus.innerHTML = "You are not logged in";
 }
 }
 checkLogin();
 
-
-}
-loginForm();
+*/

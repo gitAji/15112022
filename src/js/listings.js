@@ -1,6 +1,9 @@
 const params = new URLSearchParams(document.location.search);
 const id = params.get("id");
 
+const accessToken=localStorage.getItem("accessToken");
+const username=localStorage.getItem("username");
+
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const listingsEndPoint = "/auction/listings?limit=12&sort=created&sortOrder=desc";
 const listingsUrl = `${API_BASE_URL}${listingsEndPoint}`;
@@ -11,16 +14,28 @@ const postImage = document.getElementById("post-image");
 const login = document.getElementById("login");
 const logout = document.getElementById("logout");
 const myProfile = document.getElementById("myIBuy");
-let collections = [];
-const loginBtn=`<a href="login.html">Logout</a>`;
-const myProfileBtn=` <a href="profile.html">My iBuy</a>`;
 
-if (localStorage.getItem("accessToken")) {
-  logout.innerHTML = loginBtn ;
+let collections = [];
+const loginBtn=`<a href="login.html"><button class="btn btn-outline-primary" name="Login">Login</button></a>`;
+const logoutBtn=`<a href="login.html"><button class="btn btn-outline-primary" name="Login">Logout</button></a>`;
+const myProfileBtn=`<a href="profile.html"><button class="btn btn-outline-primary" name="MyiBuy">MyiBuy</button></a>`;
+
+if (accessToken) {
+  logout.innerHTML = logoutBtn ;
   myProfile.innerHTML = myProfileBtn;
-} else {
-  login.innerHTML = `<a href="login.html">Login</a>`;
+} 
+
+else {
+  login.innerHTML = loginBtn;
+  
+
 }
+logout.addEventListener("click",(e)=> {
+  e.preventDefault();
+console.log("logout");
+localStorage.clear();
+window.location.href='./index.html';
+});
 
 
 
@@ -93,11 +108,10 @@ export function printListings(lists) {
   allLists.innerHTML = newPost;
 }
 
-
+/*
 // search is working but has some conflict with
 const searchInput = document.getElementById("searchText");
-const endSoon= document.getElementById("ends-soon");
-const latest= document.getElementById("latest");
+
 
 searchInput.addEventListener("keyup", filterPosts);
 
@@ -119,3 +133,4 @@ function filterPosts() {
     allLists.innerHTML = `<div=class="text-primary"> No result found for "${filterQuery}" </div><div class="text-warning">Use back key to clear!</div>`;
   }
 }
+*/

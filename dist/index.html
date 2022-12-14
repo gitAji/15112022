@@ -9,12 +9,12 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/asset/favicon.ico" type="image/x-icon" />
     <title>Home-iBuy</title>
-    <script type="module" crossorigin src="/alert.js"></script>
-    <script type="module" crossorigin src="/listings.js"></script>
-    <script type="module" crossorigin src="/credits.js"></script>
-    <link rel="stylesheet" href="/alert.css">
+    <script type="module" crossorigin src="/js/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/js/listings.js">
+    <link rel="modulepreload" crossorigin href="/js/credits.js">
+    <link rel="stylesheet" href="/asset/listings.css">
   </head>
 
   <body>
@@ -67,7 +67,7 @@
               tabindex="-1"
               role="button"
               aria-disabled="true"
-              >Listings+</a
+              >Post <b>+</b></a
             >
           </div>
         </nav>
@@ -183,12 +183,6 @@
         <section class="">
           <form action="">
             <div class="row d-flex justify-content-center">
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Sign up today!</strong>
-                </p>
-              </div>
-
               <div class="col-md-5 col-12">
                 <div class="form-outline form-white mb-4">
                   <input type="email" id="signup" class="form-control" />
@@ -218,6 +212,7 @@
       <div class="bg-black p-3">© 2022 Copyright, All Rights Reserved.</div>
     </footer>
     <!-- Footer ends -->
+    
     
     
     

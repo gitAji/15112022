@@ -1,4 +1,4 @@
-import {getLi}
+
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const listingsEndPoint = "/auction/listings?limit=12&sort=created&sortOrder=desc";
 const listingsUrl = `${API_BASE_URL}${listingsEndPoint}`;

@@ -9,9 +9,9 @@ export default {
     rollupOptions: {
       input: glob.sync(path.resolve(__dirname, "src", "*.html")),
       output: {
-        entryFileNames: `[name].js`,
-        chunkFileNames: `[name].js`,
-        assetFileNames: `[name].[ext]`
+        entryFileNames: `js/[name].js`,
+        chunkFileNames: `js/[name].js`,
+        assetFileNames: `asset/[name].[ext]`
     }
   
     },

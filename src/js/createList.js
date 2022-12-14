@@ -1,3 +1,5 @@
+import { Button } from "bootstrap";
+
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const postEndPoint = "/auction/listings";
 const createPostUrl = `${API_BASE_URL}${postEndPoint}`;
@@ -17,6 +19,8 @@ const endsAtError = document.getElementById('end-time-error');
 const userMessage = document.getElementById('userMessage');
 
 const post = document.getElementById('post');
+const postBtn= document.getElementById("post");
+const postForm=document.getElementById("post-form");
 const accessToken = localStorage.getItem('accessToken');
 
 export function createPost() {
@@ -143,3 +147,8 @@ export function createPost() {
    
 
 createPost();
+
+if(!accessToken){
+    window.location.href='./login.html';
+
+}
