@@ -9,16 +9,21 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
-
-    <title>Login-iBuy</title>
+    <link rel="shortcut icon" href="/assets/favicon.2fc605cf.ico" type="image/x-icon" />
+    <title>Create List-iBuy</title>
+    <script type="module" crossorigin src="/assets/createlist.126d6154.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/alert.29446747.js">
+    <link rel="modulepreload" crossorigin href="/assets/listings.e01cd3ce.js">
+    <link rel="stylesheet" href="/assets/alert.f280f26f.css">
   </head>
 
   <body>
     <div
-      class="container-fluid d-flex p-2 justify-content-lg-end bg-secondary align-ERcA2Et-center"
+      class="container-fluid d-flex p-2 justify-content-lg-end bg-secondary align-content-center"
     >
-      <div class="row-fluid" id="status"></div>
+      <div class="row-fluid mx-2" id="myIBuy"></div>
+      <div class="row-fluid" id="login"></div>
+      <div class="row-fluid" id="logout"></div>
     </div>
 
     <div class="container-fluid">
@@ -41,23 +46,14 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarScroll">
-            <form
-              class="m-auto d-xs-none d-sm-none d-md-none d-lg-flex"
-              action=""
-            >
+            <form class="m-auto d-xs-none d-sm-none d-md-none d-lg-flex">
               <input
                 class="form-control form-control-md bg-light px-5"
                 type="search"
                 placeholder="Search"
               />
 
-              <button
-                class="btn btn-primary px-5 mx-2"
-                type="button"
-                id="search"
-              >
-                Search
-              </button>
+              <button class="btn btn-primary px-5 mx-2">Search</button>
             </form>
             <a
               href="createlist.html"
@@ -74,75 +70,80 @@
 
     <div class="container-fluid bg-light p-2 d-flex justify-content-end"></div>
     <!--end of navbar-->
-    <!--login section-->
-
     <div
-      class="container-fluid d-lg-flex align-items-center bg-white col-lg-12 justify-content-between"
+      class="container card d-flex p-5 border-0 col-lg-6 col-md-12 c3l-sm-12"
     >
-      <div class="row">
-        <div
-          class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-md-5 mb-sm-5 p-5"
-        >
-          <h2>Happy Bidding!</h2>
-          <h4 class="text-primary">Login & win the bid today.</h4>
+      <h2>List your item</h2>
+      <form class="form-control border-0 p-lg-6" id="post-form">
+        <div class="form-group">
+          <div class="" id="userMessage"></div>
+          <input
+            type="text"
+            class="form-control mb-3 mt-3 p-3"
+            id="title"
+            data-validation="required"
+            aria-describedby="title"
+            placeholder="Title"
+          />
         </div>
-      </div>
+        <div class="validate-feedback text-danger" id="title-error"></div>
 
-      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 m-2 p-lg-5">
-        <form class="form-control border-0 p-lg-4 bg-light" id="login-form">
-          <div class="form-group">
-            <div class="text-danger" id="userMessage"></div>
-            <input
-              type="email"
-              class="form-control mt-3 p-3"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Email"
-            />
-            <div class="text-danger" id="emailError"></div>
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <textarea
+              class="form-control"
+              name="description"
+              id="description"
+              rows="3"
+              placeholder="Post description"
+            ></textarea>
           </div>
-          <div>
-            <div class="form-group">
-              <input
-                type="password"
-                class="form-control mt-3 p-3"
-                id="password"
-                placeholder="Password"
-              />
-              <div class="text-danger" id="passwordError"></div>
-            </div>
-          </div>
+          <small id="emailHelp" class="form-text text-muted"> </small>
+        </div>
+        <div class="validate-feedback text-danger" id="description-error"></div>
 
-          <div class="mb-3 mt-3">
-            <a href="#" class="text-decoration-none align-content-center"
-              >Forgotten password?</a
-            >
-          </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control mb-3 mt-3 p-3"
+            id="tags"
+            data-validation=""
+            aria-describedby="tags"
+            placeholder="Tags"
+            data-role="tagsinput"
+          />
+          <small id="tags" class="form-text text-muted"> </small>
+        </div>
+        <div class="validate-feedback text-danger" id="tags-error"></div>
 
-          <div class="card border-0 mb-2">
-            <input
-              type="button"
-              class="btn btn-primary p-3"
-              id="loginBtn"
-              value="Login"
-            />
-          </div>
-          <hr />
-          <div class="card border-0 mb-2">
-            <a href="./register.html">
-              <input
-                type="button"
-                class="btn btn-success p-3 col-12"
-                id="registerBtn"
-                value="Register"
-              />
-            </a>
-          </div>
-        </form>
-      </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control mb-3 mt-3 p-3"
+            id="media"
+            aria-describedby="avatar"
+            placeholder="Image Url"
+          />
+        </div>
+        <div class="validate-feedback text-danger" id="media-error"></div>
+
+        <div class="form-group">
+          <input
+            type="datetime-local"
+            class="form-control mb-3 mt-3 p-3"
+            id="end-time"
+            aria-describedby="end-time"
+            placeholder="Ends At"
+            required="date"
+          />
+        </div>
+        <div class="validate-feedback text-danger" id="end-time-error"></div>
+      </form>
+      <input type="button" class="btn btn-success p-3" id="post" value="Post" />
     </div>
 
-    <!--login section ends-->
+    <!-- end of main  -->
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white">
@@ -191,9 +192,12 @@
                 </div>
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-outline-light mb-4">
-                  Subscribe
-                </button>
+                <input
+                  type="button"
+                  class="btn btn-outline-light mb-4"
+                  id="signup"
+                  value="signup"
+                />
               </div>
             </div>
           </form>
@@ -213,7 +217,8 @@
       <div class="bg-black p-3">© 2022 Copyright, All Rights Reserved.</div>
     </footer>
     <!-- Footer ends -->
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/login.js"></script>
+    
+    
+    
   </body>
 </html>
