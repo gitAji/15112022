@@ -46,7 +46,7 @@ const avatarError = document.getElementById("avatar-error");
         if (emailValue === "") {
             emailError.innerHTML = 'Email is required';
             validation = false;
-        } else if (emailValue.includes === "noroff.no || student.noroff.no") {
+        } else if (emailValue.includes != "noroff.no || student.noroff.no") {
             emailError.innerHTML = "Please enter your student email address.";
             validation = false;
         } else {

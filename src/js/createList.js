@@ -1,4 +1,4 @@
-import { Button } from "bootstrap";
+
 
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const postEndPoint = "/auction/listings";
@@ -19,8 +19,6 @@ const endsAtError = document.getElementById('end-time-error');
 const userMessage = document.getElementById('userMessage');
 
 const post = document.getElementById('post');
-const postBtn= document.getElementById("post");
-const postForm=document.getElementById("post-form");
 const accessToken = localStorage.getItem('accessToken');
 
 export function createPost() {
@@ -28,6 +26,8 @@ export function createPost() {
             e.preventDefault();
             console.log('form is submitted!');
             console.log(accessToken);
+         
+            const currentDate = new Date();
            
                 var validation  = true;
                 if(title.value.trim() === ""){
@@ -66,6 +66,7 @@ export function createPost() {
                     endsAtError.innerHTML = "End time is required";
                     validation = false;
                 }
+            
                 else{
                     endsAtError.innerHTML = "";
             
@@ -81,6 +82,7 @@ export function createPost() {
             
             const date= new Date(endsAtValue);
             const endDate = date.toISOString();
+           
             console.log(endDate);
 
            

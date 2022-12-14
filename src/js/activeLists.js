@@ -56,8 +56,6 @@ function printOwnListings(data, ownLists) {
             <p class="card-text">Ends At: ${endDate}</p>
             
             </div>    </a>
-           <div class="card-footer bg-gray p-3 col-lg-9">
-           </div>
            
     </div>
 
