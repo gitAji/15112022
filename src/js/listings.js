@@ -100,31 +100,6 @@ const endSoon= document.getElementById("ends-soon");
 const latest= document.getElementById("latest");
 
 searchInput.addEventListener("keyup", filterPosts);
-endSoon.addEventListener("change", endSoonPosts);
-
-
-function endSoonPosts() {
-  const checkBoxSelected = endSoon.checked;
-  
-  if (checkBoxSelected) {
-  console.log(checkBoxSelected);
-  const filteredPost = collections.filter((list) => {
-    const date= new Date(list.endsAt);
-    const endsDate = date.toLocaleString();
-    const today = new Date();
-    const todayDate = today.toLocaleString();
-return endsDate < todayDate;
-   
-  });
-  printListings(filteredPost);}
- else {
-    printListings(collections);
-    }
-  }
-endSoonPosts();
-
-
-
 
 function filterPosts() {
 

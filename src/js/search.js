@@ -1,12 +1,13 @@
-import {getListings} from "./Listings.js";
-
+import {getLi}
+const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
+const listingsEndPoint = "/auction/listings?limit=12&sort=created&sortOrder=desc";
+const listingsUrl = `${API_BASE_URL}${listingsEndPoint}`;
 
 let collections = [];
 let allLists = document.getElementById("all-lists");
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchBtn");
 
-export async function searchListings(url) {
+
+async function searchListings(url) {
   try {
     const options = {
       method: "GET",
@@ -23,9 +24,41 @@ export async function searchListings(url) {
     console.warn(error);
   }
 }
+searchListings(listingsUrl);
+
+// search is working but has some conflict with
+const searchInput = document.getElementById("searchText");
+const endSoon= document.getElementById("ends-soon");
+const latest= document.getElementById("latest");
+
+searchInput.addEventListener("keyup", filterPosts);
 
 
-export function search(lists) {
+
+
+
+
+function filterPosts() {
+
+  const filterQuery = searchInput.value.trim();
+  const query = localStorage.setItem("filterQuery", filterQuery); // session storage doesn't work
+ 
+
+  const filteredPost = collections.filter((list) => {
+    const t = list.title.toLowerCase();
+    const q = filterQuery.toLowerCase();
+    return t.startsWith(q) || t.includes(q);
+  });
+  //console.log(filteredPost);
+  printListings(filteredPost);
+
+  if (filteredPost.length === 0) {
+    allLists.innerHTML = `<div=class="text-primary"> No result found for "${filterQuery}" </div><div class="text-warning">Use back key to clear!</div>`;
+  }
+}
+
+
+/*
 searchButton.addEventListener("click", filterPosts);
 console.log(lists);
 function filterPosts() {
@@ -35,9 +68,8 @@ function filterPosts() {
   console.log(filterQuery);
   const filteredPost = collections.filter((list) => {
     const t = list.title.toLowerCase();
-    const d = list.description.toLowerCase();
     const q = filterQuery.toLowerCase();
-    return t.includes(q) || d.includes(q);
+    return t.includes(q);
   });
   //console.log(filteredPost);
   printListings(filteredPost);
@@ -47,4 +79,4 @@ function filterPosts() {
   }
 
 }
-}
+*/
