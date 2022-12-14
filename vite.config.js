@@ -8,6 +8,12 @@ export default {
     outDir: path.join(__dirname, "dist"),
     rollupOptions: {
       input: glob.sync(path.resolve(__dirname, "src", "*.html")),
+      output: {
+        entryFileNames: `[name].js`,
+        chunkFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`
+    }
+  
     },
   resolve: {
     alias: {
