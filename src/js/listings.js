@@ -5,7 +5,7 @@ const accessToken=localStorage.getItem("accessToken");
 const username=localStorage.getItem("username");
 
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
-const listingsEndPoint = "/auction/listings?limit=12&sort=created&sortOrder=desc";
+const listingsEndPoint = "/auction/listings?limit=15&sort=created&sortOrder=desc";
 const listingsUrl = `${API_BASE_URL}${listingsEndPoint}`;
 
 const allLists = document.getElementById("all-lists");
@@ -16,9 +16,9 @@ const logout = document.getElementById("logout");
 const myProfile = document.getElementById("myIBuy");
 
 let collections = [];
-const loginBtn=`<a href="login.html"><button class="btn btn-outline-primary" name="Login">Login</button></a>`;
-const logoutBtn=`<a href="login.html"><button class="btn btn-outline-primary" name="Login">Logout</button></a>`;
-const myProfileBtn=`<a href="profile.html"><button class="btn btn-outline-primary" name="MyiBuy">MyiBuy</button></a>`;
+const loginBtn=`<a href="login.html"><button class="btn btn-link" name="Login">Login</button></a>`;
+const logoutBtn=`<a href="login.html"><button class="btn btn-link" name="Login">Logout</button></a>`;
+const myProfileBtn=`<a href="profile.html"><button class="btn btn-link" name="MyiBuy">MyiBuy</button></a>`;
 
 if (accessToken) {
   logout.innerHTML = logoutBtn ;

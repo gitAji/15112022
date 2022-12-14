@@ -19,20 +19,20 @@ import"./alert.js";import"./listings.js";const u=localStorage.getItem("accessTok
     <div class="text-danger">
     <p>Please enter a valid url</p>
     </div>
-  `;return}async function o(e,n){try{const s={method:"PUT",headers:{Authorization:`Bearer ${localStorage.getItem("accessToken")}`,"Content-Type":"application/json"},body:JSON.stringify(n)},i=await fetch(e,s),m=await i.json();return i.ok?(c.innerHTML=`
+  `;return}async function o(e,n){try{const s={method:"PUT",headers:{Authorization:`Bearer ${localStorage.getItem("accessToken")}`,"Content-Type":"application/json"},body:JSON.stringify(n)},i=await fetch(e,s),g=await i.json();return i.ok?(c.innerHTML=`
         <p>Avatar updated successfully</p>
       `,setTimeout(()=>{window.location.reload()},2e3)):c.innerHTML=`
         <div class="text-danger">
         <p>Avatar update failed!</p>
         </div>
-      `,m}catch{}}o(f,t)}const I=document.getElementById("active-listings"),p=localStorage.getItem("username"),T=localStorage.getItem("accessToken"),b="https://nf-api.onrender.com/api/v1",L="/auction/profiles/",g=`${b}${L}${p}/listings`;console.log(p);console.log(g);async function A(t){try{const o={method:"GET",headers:{"Content-Type":"application/json",authorization:`Bearer ${T}`}};console.log(t);const e=await fetch(t,o);console.log(e);const n=await e.json();console.warn(n),S(n,I)}catch{}}A(g);function S(t,o){console.log(t);for(let e of t){const n=new Date(e.created).toLocaleString(),a=new Date(e.endsAt).toLocaleString();document.createElement("div"),console.log(e.title);let s=`
+      `,g}catch{}}o(f,t)}const I=document.getElementById("active-listings"),p=localStorage.getItem("username"),T=localStorage.getItem("accessToken"),b="https://nf-api.onrender.com/api/v1",L="/auction/profiles/",m=`${b}${L}${p}/listings`;console.log(p);console.log(m);async function A(t){try{const o={method:"GET",headers:{"Content-Type":"application/json",authorization:`Bearer ${T}`}};console.log(t);const e=await fetch(t,o);console.log(e);const n=await e.json();console.warn(n),S(n,I)}catch{}}A(m);function S(t,o){console.log(t);for(let e of t){const n=new Date(e.created).toLocaleString(),a=new Date(e.endsAt).toLocaleString();document.createElement("div"),console.log(e.title);let s=`
     <a href="aList.html?id=${e.id}" class="card-link">
-    <div class="card gap-5 justify-content-between">
+    <div class="card col-lg-3 col-md-6 col-sm-12 ">
     <div class="row">
-        <div class=" py-3 col-lg-3">
-            <img class="img-thumbnail p-3 border-0" src="${e.media}" alt="" srcset="" width="100%" id="avatar" />
+        <div class="col-12 align-content-center">
+            <img class="img-thumbnail border-0" src="${e.media}" alt="" srcset="" width="100%" id="avatar" />
             </div>
-        <div class="card-body bg-gray p-3 col-lg-9">
+        <div class="card-body bg-gray p-3 col-12">
             <h5 class="card-title">Title: ${e.title}</h5>
             <p class="card-text">Description: ${e.description}</p>
             <p class="card-text">Total Bids: ${e._count.bids}</p>

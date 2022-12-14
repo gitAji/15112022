@@ -43,12 +43,12 @@ function printOwnListings(data, ownLists) {
     console.log(item.title);
     let newListing = `
     <a href="aList.html?id=${item.id}" class="card-link">
-    <div class="card gap-5 justify-content-between">
+    <div class="card col-lg-3 col-md-6 col-sm-12 ">
     <div class="row">
-        <div class=" py-3 col-lg-3">
-            <img class="img-thumbnail p-3 border-0" src="${item.media}" alt="" srcset="" width="100%" id="avatar" />
+        <div class="col-12 align-content-center">
+            <img class="img-thumbnail border-0" src="${item.media}" alt="" srcset="" width="100%" id="avatar" />
             </div>
-        <div class="card-body bg-gray p-3 col-lg-9">
+        <div class="card-body bg-gray p-3 col-12">
             <h5 class="card-title">Title: ${item.title}</h5>
             <p class="card-text">Description: ${item.description}</p>
             <p class="card-text">Total Bids: ${item._count.bids}</p>
