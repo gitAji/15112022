@@ -7,6 +7,11 @@ $bg-color: #3333b26a;
 $dark: #343A40;
 $white: #fff;
 
+$btn-font-family:"Montserrat";
+$btn-font-size:1.15rem;
+
+
+
 
 a {
   color: rgb(131, 128, 128) !important;
@@ -14,4 +19,8 @@ a {
 }
 .row-fluid a {
   padding: 1em;
+}
+.btn-link{
+  font-size: large;
+  text-decoration: none;
 }

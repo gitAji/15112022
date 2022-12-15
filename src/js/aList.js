@@ -1,6 +1,4 @@
-import {
-  Button
-} from "bootstrap";
+
 const params = new URLSearchParams(document.location.search);
 const id = params.get("id");
 const accessToken = localStorage.getItem("accessToken");
@@ -42,7 +40,7 @@ getAPost(aSinglePostURL);
 
 const bidList = document.getElementById('bid-list');
 
-export function listAPost(list, out, ownBidCheck) {
+export function listAPost(list, out) {
 
 
   const date = new Date(list.endsAt);
@@ -142,22 +140,22 @@ export function listAPost(list, out, ownBidCheck) {
     if (bidAmount === "") {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a bid amount";
-      bidAmountAlert.classList.add('alert-danger');
+      bidAmountAlert.classList.add('alert-danger','m-auto');
       validation = false;
     } else if (bidAmount < 0) {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a valid bid amount";
-      bidAmountAlert.classList.add('alert-danger');
+      bidAmountAlert.classList.add('alert-danger','m-auto');
       validation = false;
     } else if (bidAmount < highestBid) {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a higher bid amount";
-      bidAmountAlert.classList.add('alert-danger');
+      bidAmountAlert.classList.add('alert-danger' ,'m-auto');
       validation = false;
     } else if (bidAmount.typeof !== "number") {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a valid number";
-      bidAmountAlert.classList.add('alert-danger');
+      bidAmountAlert.classList.add('alert-danger','m-auto');
       validation = false;
     } else {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
@@ -235,8 +233,16 @@ if(seller == userName && statusUpdate === "Active"){
 
     </div>`;
 }
+if(!userName && !accessToken){
+  //alert("can not bid on own listing");
+  bidButtonSection.innerHTML = `
+    <div class="d-flex justify-content-center col-6 m-auto gap-2">
+    <a href="login.html"><button class="btn btn-outline-primary btn-lg" id="edit">Login To Bid</button></a>
+
+    </div>`;
+}
   const postImage = list.media != "" ? `${list.media}` : "https://via.placeholder.com/150";
-  const description = list.description != null ? `${list.description}` : "No description available";
+  const description = list.description != "" ? `${list.description}` : " No description available:";
   let newDiv = `
   <div class="card d-flex m-1 col-lg-5 col-12 border-0">
     <div class="card-img-top" style:max-height="20px">
@@ -248,7 +254,7 @@ if(seller == userName && statusUpdate === "Active"){
 
     <div class="card-info p-2 col-12"> 
       <p>
-      Description:${description} 
+      <b>Description: </b>${description} 
       </p>
     </div>
 

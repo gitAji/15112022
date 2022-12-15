@@ -45,7 +45,7 @@ login.addEventListener("click", (e) => {
         email,
         password,
     }
-    console.log(loginData);
+    //console.log(loginData);
 
     async function loginUser(url, data) {
         try {
@@ -58,8 +58,8 @@ login.addEventListener("click", (e) => {
                 },
             });
             const answer = await response.json();
-            console.log(answer);
-            console.log(response);
+            //console.log(answer);
+            //console.log(response);
             if (response.status === 200) {
                 const userName = localStorage.setItem('username', answer.name);
                 const accessToken = localStorage.setItem('accessToken', answer.accessToken);
@@ -81,19 +81,7 @@ login.addEventListener("click", (e) => {
     }
     loginUser(loginUrl, loginData);
 });
-
-const userStatus= document.getElementById("status");
-
-function checkLogin() {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-userStatus.innerHTML = "You are logged in";   }
-else if (!accessToken) {
-    userStatus.innerHTML = "You are logged out";
-}
-}
-checkLogin();
-
-
 }
 loginForm();
+
+

@@ -11,7 +11,7 @@ export function updateAvatar() {
   const data = {
     avatar: avatarUrl.value.trim(),
   };
-  console.log(data);
+  //console.log(data);
 
   if (data.avatar === "") {
     avatarUpdateMessage.innerHTML = `

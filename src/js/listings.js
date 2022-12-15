@@ -1,26 +1,44 @@
 const params = new URLSearchParams(document.location.search);
 const id = params.get("id");
 
+const accessToken=localStorage.getItem("accessToken");
+const username=localStorage.getItem("username");
+
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
-const listingsEndPoint = "/auction/listings?limit=12&sort=created&sortOrder=desc";
+const listingsEndPoint = "/auction/listings?limit=15&sort=created&sortOrder=desc";
 const listingsUrl = `${API_BASE_URL}${listingsEndPoint}`;
 
 const allLists = document.getElementById("all-lists");
 const postImage = document.getElementById("post-image");
 
 const login = document.getElementById("login");
+const join= document.getElementById("join-us");
 const logout = document.getElementById("logout");
 const myProfile = document.getElementById("myIBuy");
-let collections = [];
-const loginBtn=`<a href="login.html">Logout</a>`;
-const myProfileBtn=` <a href="profile.html">My iBuy</a>`;
 
-if (localStorage.getItem("accessToken")) {
-  logout.innerHTML = loginBtn ;
+let collections = [];
+const joinBtn=`<a href="register.html"><button class="btn btn-link" name="join-us">Join Us</button></a>`;
+const loginBtn=`<a href="login.html"><button class="btn btn-link" name="Login">Login</button></a>`;
+const logoutBtn=`<a href="login.html"><button class="btn btn-link" name="Login">Logout</button></a>`;
+const myProfileBtn=`<a href="profile.html"><button class="btn btn-link" name="MyiBuy">MyiBuy</button></a>`;
+
+if (accessToken) {
+  logout.innerHTML = logoutBtn ;
   myProfile.innerHTML = myProfileBtn;
-} else {
-  login.innerHTML = `<a href="login.html">Login</a>`;
+} 
+
+else {
+  login.innerHTML = loginBtn;
+  join.innerHTML= joinBtn;
+  
+
 }
+logout.addEventListener("click",(e)=> {
+  e.preventDefault();
+//console.log("logout");
+localStorage.clear();
+window.location.href='./index.html';
+});
 
 
 
@@ -34,7 +52,7 @@ export async function getListings(url) {
     const response = await fetch(url, options);
     //console.log(response);
     const data = await response.json();
-    //console.warn(data);
+    //console.log(data);
     collections = data;
     printListings(data, allLists);
     ownLists(data);
@@ -94,42 +112,16 @@ export function printListings(lists) {
 }
 
 /*
+
 // search is working but has some conflict with
 const searchInput = document.getElementById("searchText");
-const endSoon= document.getElementById("ends-soon");
-const latest= document.getElementById("latest");
+
 
 searchInput.addEventListener("keyup", filterPosts);
-endSoon.addEventListener("change", endSoonPosts);
-
-
-function endSoonPosts() {
-  const checkBoxSelected = endSoon.checked;
-  
-  if (checkBoxSelected) {
-  console.log(checkBoxSelected);
-  const filteredPost = collections.filter((list) => {
-    const date= new Date(list.endsAt);
-    const endsDate = date.toLocaleString();
-    const today = new Date();
-    const todayDate = today.toLocaleString();
-return endsDate < todayDate;
-   
-  });
-  printListings(filteredPost);}
- else {
-    printListings(collections);
-    }
-  }
-endSoonPosts();
-
-
-
 
 function filterPosts() {
 
   const filterQuery = searchInput.value.trim();
-  const query = localStorage.setItem("filterQuery", filterQuery); // session storage doesn't work
  
 
   const filteredPost = collections.filter((list) => {
@@ -140,8 +132,6 @@ function filterPosts() {
   //console.log(filteredPost);
   printListings(filteredPost);
 
-  if (filteredPost.length === 0) {
-    allLists.innerHTML = `<div=class="text-primary"> No result found for "${filterQuery}" </div><div class="text-warning">Use back key to clear!</div>`;
-  }
+  
 }
 */
