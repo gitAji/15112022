@@ -2,7 +2,7 @@ import"./alert.js";import"./listings.js";const A="https://nf-api.onrender.com/ap
                         <div class="text-success">
                             <b>Post created successfully</b>
                         </div>
-                        `,setTimeout(()=>{S.reset(),t.innerHTML=""},3e3)):t.innerHTML=`
+                        `,setTimeout(()=>{S.reset(),t.innerHTML=""},2e3)):t.innerHTML=`
                         <div class="text-danger">
                             <b>Please check image url </b>
                         </div>

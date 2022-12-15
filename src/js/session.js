@@ -17,7 +17,7 @@ if (accessToken) {
 }
 logout.addEventListener("click",(e)=> {
   e.preventDefault();
-console.log("logout");
+//console.log("logout");
 localStorage.clear();
 window.location.href='./index.html';
 });

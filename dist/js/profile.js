@@ -1,46 +1,62 @@
-import"./alert.js";import"./listings.js";const u=localStorage.getItem("accessToken"),r=localStorage.getItem("username"),l="https://nf-api.onrender.com/api/v1",d="/auction/profiles/",v=`${l}${d}${r}`,f=`${l}${d}${r}/media`,$=document.getElementById("user");document.getElementById("avatar");document.getElementById("edit");document.getElementById("name");document.getElementById("email");document.getElementById("credit");document.getElementById("wins");document.getElementById("lists");async function h(t){try{const o={method:"GET",headers:{Authorization:`Bearer ${u}`}},e=await fetch(t,o);console.log(e);const n=await e.json();y(n),console.warn(n)}catch(o){console.warn(o)}}h(v);function y(t){let e=`
+import"./alert.js";import"./listings.js";import"./aList2.js";const g=localStorage.getItem("accessToken"),d=localStorage.getItem("username"),l="https://nf-api.onrender.com/api/v1",p="/auction/profiles/",u=`${l}${p}${d}`,v=`${l}${p}${d}/media`,$=document.getElementById("user");async function h(e){try{const t={method:"GET",headers:{Authorization:`Bearer ${g}`}},s=await(await fetch(e,t)).json();f(s),bidsWon(s)}catch(t){console.warn(t)}}h(u);function f(e){let a=`
     <div class="container card gap-3 justify-content-between">
     <div class="row">
       <div class=" py-3 col-lg-3">
-            <img class="img-thumbnail p-3 border-0" src="${t.avatar!=""?`${t.avatar}`:"https://via.placeholder.com/150"}" alt="" srcset="" width="100%" id="avatar" />
+            <img class="img-thumbnail p-3 border-0" src="${e.avatar!=""?`${e.avatar}`:"https://via.placeholder.com/150"}" alt="" srcset="" width="100%" id="avatar" />
             <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#avatarModal"> Edit Avatar</button>
 
             </div>
         <div class="card-body bg-gray p-3 col-lg-9">
-            <h5 class="card-title">Name: ${t.name}</h5>
-            <p class="card-text">Email: ${t.email}</p>
-            <p class="card-text">Credits: ${t.credits}</p>
-            <p class="card-text">Wins: ${t.wins.length}</p>
-            <p class="card-text">Listings: ${t._count.listings}</p>
+            <h5 class="card-title">Name: ${e.name}</h5>
+            <p class="card-text">Email: ${e.email}</p>
+            <p class="card-text">Credits: ${e.credits}</p>
+            <p class="card-text">Wins: ${e.wins.length}</p>
+            <p class="card-text">Listings: ${e._count.listings}</p>
             </div>
     </a>
 
-</div>`;$.innerHTML=e}const w=document.getElementById("avatarUrl"),E=document.getElementById("save"),c=document.getElementById("update-message");E.addEventListener("click",B);function B(){const t={avatar:w.value.trim()};if(console.log(t),t.avatar===""){c.innerHTML=`
+</div>`;$.innerHTML=a}const b=document.getElementById("avatarUrl"),w=document.getElementById("save"),r=document.getElementById("update-message");w.addEventListener("click",y);function y(){const e={avatar:b.value.trim()};if(e.avatar===""){r.innerHTML=`
     <div class="text-danger">
     <p>Please enter a valid url</p>
     </div>
-  `;return}async function o(e,n){try{const s={method:"PUT",headers:{Authorization:`Bearer ${localStorage.getItem("accessToken")}`,"Content-Type":"application/json"},body:JSON.stringify(n)},i=await fetch(e,s),g=await i.json();return i.ok?(c.innerHTML=`
+  `;return}async function t(a,s){try{const n={method:"PUT",headers:{Authorization:`Bearer ${localStorage.getItem("accessToken")}`,"Content-Type":"application/json"},body:JSON.stringify(s)},c=await fetch(a,n),i=await c.json();return c.ok?(r.innerHTML=`
         <p>Avatar updated successfully</p>
-      `,setTimeout(()=>{window.location.reload()},2e3)):c.innerHTML=`
+      `,setTimeout(()=>{window.location.reload()},2e3)):r.innerHTML=`
         <div class="text-danger">
         <p>Avatar update failed!</p>
         </div>
-      `,g}catch{}}o(f,t)}const I=document.getElementById("active-listings"),p=localStorage.getItem("username"),T=localStorage.getItem("accessToken"),b="https://nf-api.onrender.com/api/v1",L="/auction/profiles/",m=`${b}${L}${p}/listings`;console.log(p);console.log(m);async function A(t){try{const o={method:"GET",headers:{"Content-Type":"application/json",authorization:`Bearer ${T}`}};console.log(t);const e=await fetch(t,o);console.log(e);const n=await e.json();console.warn(n),S(n,I)}catch{}}A(m);function S(t,o){console.log(t);for(let e of t){const n=new Date(e.created).toLocaleString(),a=new Date(e.endsAt).toLocaleString();document.createElement("div"),console.log(e.title);let s=`
-    <a href="aList.html?id=${e.id}" class="card-link">
+      `,i}catch{}}t(v,e)}const T=document.getElementById("active-listings"),L=localStorage.getItem("username"),E=localStorage.getItem("accessToken"),A="https://nf-api.onrender.com/api/v1",I="/auction/profiles/",B=`${A}${I}${L}/listings`;async function S(e){try{const t={method:"GET",headers:{"Content-Type":"application/json",authorization:`Bearer ${E}`}},s=await(await fetch(e,t)).json();k(s,T)}catch{}}S(B);function k(e,t){for(let a of e){const s=new Date(a.created).toLocaleString(),o=new Date(a.endsAt).toLocaleString();document.createElement("div");let n=`
+   
     <div class="card col-lg-3 col-md-6 col-sm-12 ">
     <div class="row">
+    <a href="aList.html?id=${a.id}" class="card-link">
         <div class="col-12 align-content-center">
-            <img class="img-thumbnail border-0" src="${e.media}" alt="" srcset="" width="100%" id="avatar" />
+            <img class="img-thumbnail border-0" src="${a.media}" alt="" srcset="" width="100%" id="avatar" />
             </div>
         <div class="card-body bg-gray p-3 col-12">
-            <h5 class="card-title">Title: ${e.title}</h5>
-            <p class="card-text">Description: ${e.description}</p>
-            <p class="card-text">Total Bids: ${e._count.bids}</p>
-            <p class="card-text">Created: ${n}</p>
-            <p class="card-text">Ends At: ${a}</p>
+            <h5 class="card-title">Title: ${a.title}</h5>
+            <p class="card-text">Description: ${a.description}</p>
+            <p class="card-text">Total Bids: ${a._count.bids}</p>
+            <p class="card-text">Created: ${s}</p>
+            <p class="card-text">Ends At: ${o}</p>
             
             </div>    </a>
            
     </div>
 
-    `;o.innerHTML+=s}}document.getElementById("bids-won");const k=localStorage.getItem("accessToken"),P=localStorage.getItem("username"),U="https://nf-api.onrender.com/api/v1",x="/auction/profiles/",j=`${U}${x}${P}`;async function _(t){try{const o={method:"GET",headers:{Authorization:`Bearer ${k}`}},e=await fetch(t,o);console.log(e);const n=await e.json();listOfBidsWon(n),console.log(n)}catch(o){console.warn(o)}}_(j);
+    `;t.innerHTML+=n}}const P=document.getElementById("bided-lists"),U=localStorage.getItem("accessToken"),D=localStorage.getItem("username"),x="https://nf-api.onrender.com/api/v1",_="/auction/profiles/",j="/bids",M="?_listings=true",C=`${x}${_}${D}${j}${M}`;async function H(e){try{const t={method:"GET",headers:{Authorization:`Bearer ${U}`}},s=await(await fetch(e,t)).json();m(s)}catch(t){console.warn(t)}}H(C);function m(e){for(var t of e){console.log(t);const s=new Date(t.created).toLocaleString(),n=new Date(t.listing.endsAt).toLocaleString(),c=`${t.listing.media}`;let i="";i=`
+    <div class="card col-lg-3 col-md-6 col-sm-12 p-3">
+    <a href="/alist.html?id=${t.listing.id}">
+    <div class="card-img-top">
+          <img class="img-thumbnail border-2" src="${c}" alt="" srcset="" width="100%" />
+        </div>
+    <div class="card-title">
+    <p>List Title: ${t.listing.title}</p>
+    </div>
+    <p>Amount: ${t.amount}</p>
+    <p>Created: ${s}</p>
+    <p>Ends At: ${n}</p>
+    <button class="btn btn-outline-primary">Check Who Won</button>
+    </div>
+    </a>
+    </div>`,P.innerHTML+=i}}m();

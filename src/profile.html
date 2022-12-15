@@ -43,7 +43,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarScroll">
-            <form class="m-auto d-xs-none d-sm-none d-md-none d-lg-flex">
+            <form class="m-auto d-none d-lg-flex">
               <input
                 class="form-control form-control-md bg-light px-5"
                 type="search"
@@ -84,7 +84,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="#bids-won"
-              >Bids won</a
+              >Bided Lists</a
             >
           </li>
         </ul>
@@ -101,19 +101,18 @@
           </div>
           <div id="listings" class="container tab-pane fade">
             <br />
-            <h3>Active Listings</h3>
+            <h3>Own Listings</h3>
             <div
-              class="d-flex flex-wrap gap-3 shadow p-3 mb-1 bg-white rounded justify-content-evenly"
+              class="d-flex flex-row flex-wrap gap-3 shadow p-3 mb-1 bg-white rounded justify-content-evenly"
               id="active-listings"
             ></div>
-            <div class="card-footer" id="buttons"></div>
           </div>
           <div id="bids-won" class="container tab-pane fade">
             <br />
-            <h3>Bids Won</h3>
+            <h3>List Bided</h3>
             <div
-              class="container d-flex p-2 flex-wrap shadow p-3 mb-5 bg-white rounded"
-              id="bids-won"
+              class="card d-flex justify-content-evenly p-2 flex-wrap shadow p-3 mb-5 gap-3 bg-white rounded col-12 flex-row"
+              id="bided-lists"
             ></div>
           </div>
           <hr />
@@ -243,7 +242,7 @@
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/profile.js"></script>
     <script type="module" src="./js/listings.js"></script>
-    <script type="module" src="./js/activeLists.js"></script>
-    <script type="module" src="./js/bidsWon.js"></script>
+    <script type="module" src="./js/ownLists.js"></script>
+    <script type="module" src="./js/listsBidded.js"></script>
   </body>
 </html>

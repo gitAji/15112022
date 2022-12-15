@@ -12,10 +12,12 @@ const allLists = document.getElementById("all-lists");
 const postImage = document.getElementById("post-image");
 
 const login = document.getElementById("login");
+const join= document.getElementById("join-us");
 const logout = document.getElementById("logout");
 const myProfile = document.getElementById("myIBuy");
 
 let collections = [];
+const joinBtn=`<a href="register.html"><button class="btn btn-link" name="join-us">Join Us</button></a>`;
 const loginBtn=`<a href="login.html"><button class="btn btn-link" name="Login">Login</button></a>`;
 const logoutBtn=`<a href="login.html"><button class="btn btn-link" name="Login">Logout</button></a>`;
 const myProfileBtn=`<a href="profile.html"><button class="btn btn-link" name="MyiBuy">MyiBuy</button></a>`;
@@ -27,12 +29,13 @@ if (accessToken) {
 
 else {
   login.innerHTML = loginBtn;
+  join.innerHTML= joinBtn;
   
 
 }
 logout.addEventListener("click",(e)=> {
   e.preventDefault();
-console.log("logout");
+//console.log("logout");
 localStorage.clear();
 window.location.href='./index.html';
 });
@@ -49,7 +52,7 @@ export async function getListings(url) {
     const response = await fetch(url, options);
     //console.log(response);
     const data = await response.json();
-    //console.warn(data);
+    //console.log(data);
     collections = data;
     printListings(data, allLists);
     ownLists(data);
@@ -109,6 +112,7 @@ export function printListings(lists) {
 }
 
 /*
+
 // search is working but has some conflict with
 const searchInput = document.getElementById("searchText");
 
@@ -118,7 +122,6 @@ searchInput.addEventListener("keyup", filterPosts);
 function filterPosts() {
 
   const filterQuery = searchInput.value.trim();
-  const query = localStorage.setItem("filterQuery", filterQuery); // session storage doesn't work
  
 
   const filteredPost = collections.filter((list) => {
@@ -129,8 +132,6 @@ function filterPosts() {
   //console.log(filteredPost);
   printListings(filteredPost);
 
-  if (filteredPost.length === 0) {
-    allLists.innerHTML = `<div=class="text-primary"> No result found for "${filterQuery}" </div><div class="text-warning">Use back key to clear!</div>`;
-  }
+  
 }
 */

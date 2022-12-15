@@ -132,7 +132,7 @@ export function createPost() {
                         setTimeout(() => {
                            form.reset ();
                            userMessage.innerHTML = "";
-                        }, 3000);
+                        }, 2000);
 
                         }
                 

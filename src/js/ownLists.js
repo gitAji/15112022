@@ -7,8 +7,8 @@ const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const listingsEndPoint = "/auction/profiles/";
 const ownListingsUrl = `${API_BASE_URL}${listingsEndPoint}${userName}/listings`;
 
-console.log(userName);
-console.log(ownListingsUrl);
+//console.log(userName);
+//console.log(ownListingsUrl);
 
 async function getOwnListings(url) {
     try {
@@ -19,11 +19,11 @@ async function getOwnListings(url) {
                 authorization: `Bearer ${accessToken}`,
             },
         }
-        console.log(url);
+        //console.log(url);
         const response = await fetch(url, options);
-    console.log(response);
+    //console.log(response);
     const data = await response.json();
-    console.warn(data);
+    //console.warn(data);
     printOwnListings(data, ownLists);
     
   } catch (error) {
@@ -33,18 +33,19 @@ async function getOwnListings(url) {
 getOwnListings(ownListingsUrl);
 
 function printOwnListings(data, ownLists) {
-  console.log(data);
+  //console.log(data);
   for(let item of data) {
     const createdDate= new Date(item.created).toLocaleString();
     const endDate= new Date(item.endsAt).toLocaleString();
     const buttons= document.createElement('div');
     
    
-    console.log(item.title);
+    //console.log(item.title);
     let newListing = `
-    <a href="aList.html?id=${item.id}" class="card-link">
+   
     <div class="card col-lg-3 col-md-6 col-sm-12 ">
     <div class="row">
+    <a href="aList.html?id=${item.id}" class="card-link">
         <div class="col-12 align-content-center">
             <img class="img-thumbnail border-0" src="${item.media}" alt="" srcset="" width="100%" id="avatar" />
             </div>
