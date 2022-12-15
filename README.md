@@ -25,12 +25,12 @@ The client has specified the following requirements in the form of User Stories:
 ### Required links
 The Product Owner has requested links to the following:<br>
 
-<li>A Gantt chart for project timing</li>
-<li>A design prototype</li>
-<li>A style guide<br>
-<li>A kanban project board</li>
-<li>A repository link<br>
-<li>A hosted application demo link</li>
+<a href="https://github.com/users/gitAji/projects/3/views/1"><li>A Gantt chart for project timing</li></a>
+<a href="https://www.figma.com/file/lNxhH5mS2rTn2KpMkSly5q/Project-II?node-id=1%3A2&t=He6dB82Cb56MOfYB-0"><li>A design prototype</li></a>
+<a href="https://www.figma.com/file/lNxhH5mS2rTn2KpMkSly5q/Project-II?node-id=1%3A2&t=zYgKeeleS7Mj0BgG-3"><li>A style guide<br></a>
+<a href="https://github.com/users/gitAji/projects/3/views/2"><li>A kanban project board</li></a>
+<a href="https://github.com/gitAji/Project-II"><li>A repository link<br></a>
+<a href="https://i-buy.netlify.app/"><li>A hosted application demo link</li></a>
 
 ## CSS framework used
 Bootstrap
@@ -45,6 +45,7 @@ Figma
 ## Planning application used
 GitHub Projects
 
+
+
 ## How to setup and run the project locally
-npm i
-npm start 
+ 
