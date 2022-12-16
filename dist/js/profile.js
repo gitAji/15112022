@@ -1,4 +1,4 @@
-import"./nav.635f5b05.js";const g=localStorage.getItem("accessToken"),d=localStorage.getItem("username"),l="https://nf-api.onrender.com/api/v1",p="/auction/profiles/",u=`${l}${p}${d}`,v=`${l}${p}${d}/media`,$=document.getElementById("user");async function h(e){try{const t={method:"GET",headers:{Authorization:`Bearer ${g}`}},s=await(await fetch(e,t)).json();f(s),bidsWon(s)}catch(t){console.warn(t)}}h(u);function f(e){let a=`
+import"./nav.js";const g=localStorage.getItem("accessToken"),d=localStorage.getItem("username"),l="https://nf-api.onrender.com/api/v1",p="/auction/profiles/",u=`${l}${p}${d}`,v=`${l}${p}${d}/media`,$=document.getElementById("user");async function h(e){try{const t={method:"GET",headers:{Authorization:`Bearer ${g}`}},s=await(await fetch(e,t)).json();f(s),bidsWon(s)}catch(t){console.warn(t)}}h(u);function f(e){let a=`
     <div class="container card gap-3 justify-content-between">
     <div class="row">
       <div class=" py-3 col-lg-3">

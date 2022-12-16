@@ -19,12 +19,14 @@ userLogin.addEventListener("click", (e) => {
         emailError.innerHTML = "Email is required";
         validation = false;
     }
-    else if (email.includes != "noroff.no" || "student.noroff.no") {
+    else if (!email.includes ("noroff.no") || ("stud.noroff.no")){
         emailError.innerHTML = "Please enter your student email address.";
         validation = false;
-    } else {
+
+    }
+    else{
         emailError.innerHTML = "";
-        validation = true;
+
     }
     if (password === "") {
         passwordError.innerHTML = "Password is required";
@@ -37,9 +39,9 @@ userLogin.addEventListener("click", (e) => {
         emailError.innerHTML="";
         passwordError.innerHTML = "";
 
-        validation = true;
+        
     }
-
+    validation = true;
 
     const loginData = {
         email,
