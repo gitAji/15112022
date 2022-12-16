@@ -1,3 +1,5 @@
+
+
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const postEndPoint = "/auction/listings";
 const createPostUrl = `${API_BASE_URL}${postEndPoint}`;
@@ -24,6 +26,8 @@ export function createPost() {
             e.preventDefault();
             console.log('form is submitted!');
             console.log(accessToken);
+         
+            const currentDate = new Date();
            
                 var validation  = true;
                 if(title.value.trim() === ""){
@@ -62,6 +66,7 @@ export function createPost() {
                     endsAtError.innerHTML = "End time is required";
                     validation = false;
                 }
+            
                 else{
                     endsAtError.innerHTML = "";
             
@@ -77,6 +82,7 @@ export function createPost() {
             
             const date= new Date(endsAtValue);
             const endDate = date.toISOString();
+           
             console.log(endDate);
 
            
@@ -126,7 +132,7 @@ export function createPost() {
                         setTimeout(() => {
                            form.reset ();
                            userMessage.innerHTML = "";
-                        }, 3000);
+                        }, 2000);
 
                         }
                 
@@ -143,3 +149,4 @@ export function createPost() {
    
 
 createPost();
+
