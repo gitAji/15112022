@@ -5,7 +5,7 @@ const accessToken=localStorage.getItem("accessToken");
 const username=localStorage.getItem("username");
 
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
-const listingsEndPoint = "/auction/listings?limit=15&sort=created&sortOrder=desc";
+const listingsEndPoint = "/auction/listings?limit=30&sort=created&sortOrder=desc";
 const listingsUrl = `${API_BASE_URL}${listingsEndPoint}`;
 
 // this bit is moved to nav.js
