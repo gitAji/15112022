@@ -100,7 +100,7 @@ export function listAPost(list, out) {
     //console.log(highestBid);
     const topBid = document.getElementById('highestBid');
 
-    const newDiv = `<div class="d-flex  alert alert-light-secondary fw-bold" id="highest">
+    const newDiv = `<div class="d-flex  alert alert-light fw-bold p-2 justify-content-between" id="highest">
     Highest bid is ${highestBid}kr</b>  by  ${bid.bidderName} &nbsp;<div class="text-muted">Please bid higher than the last bid!</div> </div>`;
     topBid.innerHTML = newDiv;
 
@@ -112,13 +112,13 @@ export function listAPost(list, out) {
     const bidList = document.getElementById('user-bids');
 
     bidList.innerHTML += `<div class="d-flex">
-    <div class="card-title col-6">
+    <div class="card-title p-2">
     <p><b>Bidder Name: </b>${bid.bidderName}</p>
     </div>
-    <div class="card-title col-6">
+    <div class="card-title p-2">
     <p><b>Bid Amount: </b>${bid.amount}kr</p>
     </div>
-    <div class="card-title col-6">
+    <div class="card-title p-2">
     <p><b>Bid Time: </b>${biddedDate}</p>
     </div>
     </div>`;
@@ -140,22 +140,22 @@ export function listAPost(list, out) {
     if (bidAmount === "") {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a bid amount";
-      bidAmountAlert.classList.add('alert-danger','m-auto');
+      bidAmountAlert.classList.add('alert-secondary','m-auto','col-4');
       validation = false;
     } else if (bidAmount < 0) {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a valid bid amount";
-      bidAmountAlert.classList.add('alert-danger','m-auto');
+      bidAmountAlert.classList.add('alert-secondary','m-auto','col-4');
       validation = false;
     } else if (bidAmount < highestBid) {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a higher bid amount";
-      bidAmountAlert.classList.add('alert-danger' ,'m-auto');
+      bidAmountAlert.classList.add('alert-secondary' ,'m-auto','col-4');
       validation = false;
     } else if (bidAmount.typeof !== "number") {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
       bidAmountAlert.innerHTML = "Please enter a valid number";
-      bidAmountAlert.classList.add('alert-danger','m-auto');
+      bidAmountAlert.classList.add('alert-secondary','m-auto','col-4');
       validation = false;
     } else {
       const bidAmountAlert = document.getElementById('bidAmountAlert');
@@ -210,17 +210,17 @@ export function listAPost(list, out) {
       }
     }
     postBid(postBidUrl, bid);
-    console.log(type);
+    //console.log(type);
   }
   
 const seller= list.seller.name;
-console.log(seller);
+//console.log(seller);
 if(seller == userName && statusUpdate === "Ended"){
   //alert("can not bid on own listing");
   bidButtonSection.innerHTML = `
     <div class="d-flex justify-content-center col-6 m-auto gap-2">
     <button class="btn btn-secondary btn-lg disabled" id="expired">Expired</button>
-    <button class="btn btn-danger btn-lg" id="delete">Delete</button>
+    <button class="btn btn-primary btn-lg" id="delete">Delete</button>
 
     </div>`;
 }
@@ -229,7 +229,7 @@ if(seller == userName && statusUpdate === "Active"){
   bidButtonSection.innerHTML = `
     <div class="d-flex justify-content-center col-6 m-auto gap-2">
     <button class="btn btn-secondary btn-lg" id="edit">Edit</button>
-    <button class="btn btn-danger btn-lg" id="delete">Delete</button>
+    <button class="btn btn-primary btn-lg" id="delete">Delete</button>
 
     </div>`;
 }
@@ -237,7 +237,7 @@ if(!userName && !accessToken){
   //alert("can not bid on own listing");
   bidButtonSection.innerHTML = `
     <div class="d-flex justify-content-center col-6 m-auto gap-2">
-    <a href="login.html"><button class="btn btn-outline-primary btn-lg" id="edit">Login To Bid</button></a>
+    <a href="login.html"><button class="btn btn-outline-success btn-lg" id="edit">Login To Bid</button></a>
 
     </div>`;
 }
