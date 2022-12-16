@@ -75,4 +75,4 @@ npm run start
  
  ## Note:
  To run the project on local, clone the repo and run, npm i & npm run start and view the site in localhost port 5173.
- 
+ Please use the small search box above the posts to filter posts.
