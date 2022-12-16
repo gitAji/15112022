@@ -1,4 +1,5 @@
 # Semester Project 2
+<img width="812" alt="style-tile" src="https://user-images.githubusercontent.com/89026824/208069634-3bcbcdc8-25ec-4946-b5d9-5adb99a39110.png">
 ### Goal
 To take the skills learned over the past three semesters and create an auction website.<br>
 
@@ -69,4 +70,7 @@ npm i sass
 ```
 npm run start 
 ``` 
+ 
+ ## Note:
+ To run the project on local, clone the repo and run, npm i & npm run start and view the site in localhost port 5173.
  
