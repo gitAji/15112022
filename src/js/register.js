@@ -1,6 +1,9 @@
+import { check } from "prettier";
+
 const API_BASE_URL = "https://nf-api.onrender.com/api/v1";
 const registerEndPoint = "/auction/auth/register";
 const registerUrl = `${API_BASE_URL}${registerEndPoint}`;
+const accessToken=document.getElementById("accessToken");
 
 const name = document.getElementById("userName");
 const email = document.getElementById("email");
@@ -15,6 +18,7 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 const confirmPasswordError = document.getElementById("confirm-password-error");
 const avatarError = document.getElementById("avatar-error");
+
 
 
  export function userRegistration() {
@@ -42,11 +46,12 @@ const avatarError = document.getElementById("avatar-error");
         if (emailValue === "") {
             emailError.innerHTML = 'Email is required';
             validation = false;
-        } else if (emailValue.includes === "noroff.no || student.noroff.no") {
+        }else if (emailValue.includes !== 'noroff.no' || 'stud.noroff.no') {
             emailError.innerHTML = "Please enter your student email address.";
             validation = false;
         } else {
             emailError.innerHTML = "";
+            
         }
 
         if (passwordValue === "") {

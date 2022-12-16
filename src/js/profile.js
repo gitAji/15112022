@@ -9,13 +9,7 @@ const avatarUpdateUrl = `${API_BASE_URL}${profileEndPoint}${userName}/media`;
 
 
 const user = document.getElementById("user");
-const avatar = document.getElementById("avatar");
-const edit = document.getElementById("edit");
-const profileName = document.getElementById("name");
-const email = document.getElementById("email");
-const credit = document.getElementById("credit");
-const wins = document.getElementById("wins");
-const lists = document.getElementById("lists");
+
 
 /**
  * @param {url}
@@ -33,12 +27,13 @@ export async function getProfile(url) {
         //console.log(url, options);
 
         const response = await fetch(url, options);
-        console.log(response);
+        //console.log(response);
         const data = await response.json();
    
         profileData(data);
+        bidsWon(data);
        
-        console.warn(data);
+       // console.warn(data);
     } catch (error) {
         console.warn(error);
     }
@@ -47,7 +42,7 @@ getProfile(profileUrl);
 
 
 export function profileData(data) {
-  
+ 
 const profilePicture = data.avatar !="" ?`${data.avatar}`: "https://via.placeholder.com/150"; 
 
     let newProfile = `
@@ -74,6 +69,7 @@ const profilePicture = data.avatar !="" ?`${data.avatar}`: "https://via.placehol
    
    
 }
+//console.log(data.wins);
 
 /*
 * update the profile avatar using module
@@ -89,7 +85,7 @@ export function updateAvatar() {
   const data = {
     avatar: avatarUrl.value.trim(),
   };
-  console.log(data);
+  //console.log(data);
 
   if (data.avatar === "") {
     avatarUpdateMessage.innerHTML = `

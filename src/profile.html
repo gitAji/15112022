@@ -9,32 +9,8 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link
-      rel="shortcut icon"
-      href="images/icons/favicon.ico"
-      type="image/x-icon"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
     <title>Dashboard-iBuy</title>
   </head>
 
@@ -67,7 +43,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarScroll">
-            <form class="m-auto d-xs-none d-sm-none d-md-none d-lg-flex">
+            <form class="m-auto d-none d-lg-flex">
               <input
                 class="form-control form-control-md bg-light px-5"
                 type="search"
@@ -82,7 +58,7 @@
               tabindex="-1"
               role="button"
               aria-disabled="true"
-              >Listings+</a
+              >Post <b>+</b></a
             >
           </div>
         </nav>
@@ -108,7 +84,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="#bids-won"
-              >Bids won</a
+              >Bided Lists</a
             >
           </li>
         </ul>
@@ -125,19 +101,18 @@
           </div>
           <div id="listings" class="container tab-pane fade">
             <br />
-            <h3>Active Listings</h3>
+            <h3>Own Listings</h3>
             <div
-              class="d-flex flex-nowrap flex-column gap-2 shadow p-3 mb-5 bg-white rounded"
+              class="d-flex flex-row flex-wrap gap-3 shadow p-3 mb-1 bg-white rounded justify-content-evenly"
               id="active-listings"
             ></div>
-            <div class="card-footer" id="buttons"></div>
           </div>
           <div id="bids-won" class="container tab-pane fade">
             <br />
-            <h3>Bids Won</h3>
+            <h3>List Bided</h3>
             <div
-              class="container d-flex p-2 flex-wrap shadow p-3 mb-5 bg-white rounded"
-              id="bids-won"
+              class="card d-flex justify-content-evenly p-2 flex-wrap shadow p-3 mb-5 gap-3 bg-white rounded col-12 flex-row"
+              id="bided-lists"
             ></div>
           </div>
           <hr />
@@ -235,12 +210,6 @@
         <section class="">
           <form action="">
             <div class="row d-flex justify-content-center">
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Sign up today!</strong>
-                </p>
-              </div>
-
               <div class="col-md-5 col-12">
                 <div class="form-outline form-white mbs4">
                   <input type="email" id="signup" class="form-control" />
@@ -272,8 +241,8 @@
     <!-- Footer ends -->
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/profile.js"></script>
-    <script type="module" src="./js/listings.js"></script>
-    <script type="module" src="./js/activeLists.js"></script>
-    <script type="module" src="./js/bidsWon.js"></script>
+    <script type="module" src="./js/ownLists.js"></script>
+    <script type="module" src="./js/listsBidded.js"></script>
+    <script type="module" src="./js/nav.js"></script>
   </body>
 </html>

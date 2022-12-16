@@ -22,6 +22,7 @@
       class="container-fluid d-flex p-2 justify-content-lg-end bg-secondary align-content-center"
     >
       <div class="row-fluid mx-2" id="myIBuy"></div>
+      <div class="row-fluid" id="join-us"></div>
       <div class="row-fluid" id="login"></div>
       <div class="row-fluid" id="logout"></div>
     </div>
@@ -46,7 +47,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarScroll">
-            <form class="m-auto d-xs-none d-sm-none d-md-none d-lg-flex">
+            <form class="m-auto d-none d-lg-flex">
               <input
                 class="form-control form-control-md bg-light px-5"
                 type="search"
@@ -61,7 +62,7 @@
               tabindex="-1"
               role="button"
               aria-disabled="true"
-              >Listings+</a
+              >Post <b>+</b></a
             >
           </div>
         </nav>
@@ -203,12 +204,6 @@
         <section class="">
           <form action="">
             <div class="row d-flex justify-content-center">
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Sign up today!</strong>
-                </p>
-              </div>
-
               <div class="col-md-5 col-12">
                 <div class="form-outline form-white mb-4">
                   <input type="email" id="signup" class="form-control" />
@@ -240,6 +235,6 @@
     <!-- Footer ends -->
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/register.js"></script>
-    <script type="module" src="./js/listings.js"></script>
+    <script type="module" src="./js/nav.js"></script>
   </body>
 </html>
