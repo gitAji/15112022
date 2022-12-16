@@ -1,5 +1,6 @@
 # Semester Project 2
-<img width="812" alt="style-tile" src="https://user-images.githubusercontent.com/89026824/208069634-3bcbcdc8-25ec-4946-b5d9-5adb99a39110.png">
+
+<img width="812" alt="style tile" src="https://user-images.githubusercontent.com/89026824/208197588-92bbdd0c-fc32-43f6-a9ec-bba0cf60abeb.png">
 
 ### Goal
 To take the skills learned over the past three semesters and create an auction website.<br>
