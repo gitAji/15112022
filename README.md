@@ -48,4 +48,25 @@ GitHub Projects
 
 
 ## How to setup and run the project locally
+
+
+```
+git@github.com:gitAji/Project-II.git
+```
+```
+npm i
+```
+
+```
+npm install bootstrap@v5.2.3
+``` 
+```
+npm i @popperjs/core
+``` 
+```
+npm i sass
+``` 
+```
+npm run start 
+``` 
  
