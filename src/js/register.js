@@ -43,16 +43,16 @@ const avatarError = document.getElementById("avatar-error");
             nameError.innerHTML = "";
         }
 
-        if (emailValue === "") {
-            emailError.innerHTML = 'Email is required';
-            validation = false;
-        }else if (emailValue.includes == ("noroff.no") ||("stud.noroff.no")) {
-            emailError.innerHTML = "Please enter your student email address.";
-            validation = false;
-        } else {
-            emailError.innerHTML = "";
-            
-        }
+            if (emailValue === "") {
+                emailError.innerHTML = 'Email is required';
+                validation = false;
+            }else if (!emailValue.includes("noroff.no") || !emailValue.includes("stud.noroff.no")) {
+                emailError.innerHTML = "Please enter your student email address.";
+                validation = false;
+            } else {
+                emailError.innerHTML = "";
+                
+            }
 
         if (passwordValue === "") {
             passwordError.innerHTML = 'Password is required';
@@ -76,6 +76,7 @@ const avatarError = document.getElementById("avatar-error");
 
         if (passwordValue !== confirmPasswordValue) {
             confirmPasswordError.innerHTML = "Passwords do not match.";
+            validation = false;
         } else {
             confirmPasswordError.innerHTML = "";
         }
